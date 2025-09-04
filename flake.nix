@@ -54,6 +54,13 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 	({ config, pkgs, ...}: {
+          # ← 既存設定の中にこれを追加
+          nixpkgs.config = {
+            allowUnfree = true;
+            # Terraform だけ許可（名前マッチ）
+            allowUnfreePredicate = pkg: builtins.elem (pkgs.lib.getName pkg) [ "terraform" ];
+          };
+
 	  # === ここ：overlay を有効化 ===
           nixpkgs.overlays = [ self.overlays.default ];
 
