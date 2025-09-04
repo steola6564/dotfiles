@@ -72,6 +72,14 @@
     shell = pkgs.zsh;
   };
 
+  users.groups.cloudflared = { };
+
+  users.users.cloudflared = {
+    isSystemUser = true;
+    group = "cloudflared";
+    description = "Cloudflared Service user";
+  };
+
   programs.zsh.enable = true;
   users.defaultUserShell = pkgs.zsh;
 
@@ -101,7 +109,15 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    settings = {
+      PasswordAuthentication = true;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
+  };
+  
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

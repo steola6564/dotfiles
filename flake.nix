@@ -36,8 +36,8 @@
 	  # cloudflared json encrypted with agenix
 	  age.secrets."cloudflared/credentials" = {
 	    file = ./secrets/cloudflared-credentials.age;
-	    owner = "root";
-	    group = "root";
+	    owner = "cloudflared";
+	    group = "cloudflared";
 	    mode  = "0400";
 	  };
 
@@ -51,7 +51,8 @@
 
 	      # domain-specific routing. :Ex Guacamole (HTTP) is placed on port 8080
 	      ingress = {
-	        "terminal.niboratory.com" =  { service = "http://127.0.0.1:8000"; };
+	        "terminal.niboratory.com" = "ssh://localhost:22";
+	        # "terminal.niboratory.com" =  { service = "http://127.0.0.1:8000"; };
 	      };
 	      default = "http_status:404";
 	    };
