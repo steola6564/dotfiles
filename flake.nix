@@ -26,9 +26,9 @@
 
 	  # cloudflared json encrypted with agenix
 	  age.secrets."cloudflared/credentials" = {
-	    file = secrets/cloudflared-credentials.age;
-	    owner = config.services.cloudflared.user;
-	    group = config.services.cloudflared.group;
+	    file = ./secrets/cloudflared-credentials.age;
+	    owner = "root";
+	    group = "root";
 	    mode  = "0400";
 	  };
 
