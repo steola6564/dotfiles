@@ -106,6 +106,8 @@
     htop
     curl
     cloudflared-bin
+    terraform
+    opentofu
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
