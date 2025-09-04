@@ -21,8 +21,17 @@
 	  # Enable the agenix NixOS module 
           imports = [ agenix.nixosModules.default ];
 
+	  # root（起動時）が使う復号用の鍵を指定
+          age.identityPaths = [ "/etc/age/host.agekey" ];
+
 	  # agenix CLI
-	  environment.systemPackages = [ agenix.packages.x86_64-linux.default ];
+	  environment.systemPackages = with pkgs; [
+	    agenix.packages.x86_64-linux.default
+	    age
+	    # unstable から age-plugin-ssh / ssh-to-age を取る
+            # (inputs.unstable.legacyPackages.x86_64-linux.age-plugin-ssh)
+            # (inputs.unstable.legacyPackages.x86_64-linux.ssh-to-age)
+	  ];
 
 	  # cloudflared json encrypted with agenix
 	  age.secrets."cloudflared/credentials" = {
