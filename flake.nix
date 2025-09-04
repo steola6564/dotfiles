@@ -9,7 +9,43 @@
     agenix.url = "github:ryantm/agenix";
   };
 
-  outputs = { self, nixpkgs, agenix, ... }@inputs: {
+  outputs = { self, nixpkgs, unstable, agenix, ... }@inputs: {
+    # === ここ：overlay 定義 ===
+    overlays.default = (final: prev:
+      let
+        ver = "2025.8.1";  # ← 使いたいリリースのタグに合わせて変更
+        urlFor = system: {
+          "x86_64-linux" = "https://github.com/cloudflare/cloudflared/releases/download/${ver}/cloudflared-linux-amd64";
+        }.${system};
+        shaFor = system: {
+          # 下の prefetch 手順で得た値に差し替え
+          "x86_64-linux" = "sha256-pmNTAEGX7kwfy2hUkgOCSIK7piN4rU0A0jS9uCUfERQ=";
+        }.${system};
+      in {
+        cloudflared-bin = final.stdenvNoCC.mkDerivation {
+          pname = "cloudflared-bin";
+          version = ver;
+          src = final.fetchurl {
+            url = urlFor final.stdenv.hostPlatform.system;
+            sha256 = shaFor final.stdenv.hostPlatform.system;
+          };
+          dontUnpack = true;
+          installPhase = ''
+            install -Dm755 "$src" "$out/bin/cloudflared"
+          '';
+          meta = with final.lib; {
+            description = "Cloudflare Tunnel daemon (prebuilt binary)";
+            homepage = "https://developers.cloudflare.com/cloudflare-one/";
+            # 公式配布バイナリはOSSでないので unfree 指定
+            license = licenses.unfree;
+            platforms = [ "x86_64-linux" ];
+            mainProgram = "cloudflared";
+          };
+        };
+      }
+    );
+
+
     # Please replace my-nixos with your hostname
     nixosConfigurations.nixos-server = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -18,6 +54,9 @@
         # so the old configuration file still takes effect
         ./configuration.nix
 	({ config, pkgs, ...}: {
+	  # === ここ：overlay を有効化 ===
+          nixpkgs.overlays = [ self.overlays.default ];
+
 	  # Enable the agenix NixOS module 
           imports = [ agenix.nixosModules.default ];
 
@@ -44,6 +83,8 @@
 	  # cloudflare resident + gwak tunnel
 	  services.cloudflared = {
 	    enable = true;
+	    # ← ここがポイント：overlay の cloudflared-bin を使う
+            package = pkgs.cloudflared-bin; 
 
 	    tunnels."e34c4c53-0d57-44fc-a32d-62afedbe5c05" = {
 	      # agenix passes the decrypted file to credentialsFile

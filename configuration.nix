@@ -5,6 +5,15 @@
 { config, lib, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "cloudflared-bin"
+    ];
+
+  systemd.services."cloudflared-tunnel-e34c4c53-0d57-44fc-a32d-62afedbe5c05".serviceConfig = {
+    Environment = "CLOUDFLARED_NO_AUTOUPDATE=true";
+  };
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -96,6 +105,7 @@
     git
     htop
     curl
+    cloudflared-bin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
