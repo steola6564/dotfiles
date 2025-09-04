@@ -51,7 +51,7 @@
 
 	      # domain-specific routing. :Ex Guacamole (HTTP) is placed on port 8080
 	      ingress = {
-	        "terminal.niboratory.com".service = "http://127.0.0.1:8000";
+	        "terminal.niboratory.com" =  { service = "http://127.0.0.1:8000"; };
 	      };
 	      default = "http_status:404";
 	    };
