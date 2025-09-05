@@ -77,6 +77,17 @@
 	    # unstable から age-plugin-ssh / ssh-to-age を取る
             # (inputs.unstable.legacyPackages.x86_64-linux.age-plugin-ssh)
             # (inputs.unstable.legacyPackages.x86_64-linux.ssh-to-age)
+	    jq
+	    (pkgs.writeShellScriptBin "tf" ''
+              set -euo pipefail
+              cfg='${config.age.secrets."tf/cloudflare.json".path}'
+              export TF_VAR_cloudflare_api_token="$(jq -r .api_token "$cfg")"
+              export TF_VAR_cloudflare_zone_id="$(jq -r .zone_id "$cfg")"
+              export TF_VAR_cloudflare_account_id="$(jq -r .account_id "$cfg")"
+              export TF_VAR_tunnel_id="$(jq -r .tunnel_id "$cfg")"
+              export TF_VAR_allow_email="$(jq -r .allow_email "$cfg")"
+              exec ${pkgs.terraform}/bin/terraform "$@"
+            '')
 	  ];
 
 	  # cloudflared json encrypted with agenix
@@ -86,6 +97,14 @@
 	    group = "cloudflared";
 	    mode  = "0400";
 	  };
+
+	  # 復号ファイルを steola に
+          age.secrets."tf/cloudflare.json" = {
+            file  = ./secrets/tf-cloudflare.json.age;
+            owner = "steola";
+            group = "users";
+            mode  = "0400";
+          };
 
 	  # cloudflare resident + gwak tunnel
 	  services.cloudflared = {
