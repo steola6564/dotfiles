@@ -125,15 +125,6 @@
 	    };
 	  };
 	})
-	# ./gwakamore.nix;
-	# {
-	#   services.gwakamore = {
-	#     enable = true;
-	#     userMapping = /var/lib/guacamole/user-mapping.xml;
-	#     domain = "terminal.nibolish.com"
-	#     credentialFile = ;
-	#   };
-	# }
       ];
     };
   };
