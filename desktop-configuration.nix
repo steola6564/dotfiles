@@ -34,6 +34,16 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [
+      fcitx5-mozc
+      fcitx5-gtk
+      libsForQt5.fcitx5-qt
+      qt6Packages.fcitx5-qt
+    ];
+  };
+
   console = {
     font = "Lat2-Terminus16";
     # keyMap = "us";
@@ -84,6 +94,9 @@
     "GBM_BACKEND" = "nvidia-drm";
     "WLR_NO_HARDWARE_CURSORS" = "1";
     # "WLR_RENDERER" = "vulkan";
+    # GTK_IM_MODULE = "fcitx";
+    QT_IM_MODULE = "fcitx";
+    XMODIFIERS = "@im=fcitx";
   };
 
   # Configure keymap in X11
