@@ -15,15 +15,7 @@
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi = {
-    efiSysMountPoint = "/boot";
-    canTouchEfiVariables = false;
-  };
-  boot.loader.systemd-boot.extraInstallCommands = ''
-    cp -f /boot/EFI/systemd/systemd-bootx64.efi /boot/EFI/BOOT/BOOTX64.EFI
-  '';
-
-  # boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_6;
@@ -58,10 +50,15 @@
 
     videoDrivers = [ "nvidia" ];
     displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = false;
+    displayManager.gdm.wayland = true;
     desktopManager.gnome.enable = true;
   };
-  
+ 
+  programs.hyprland.enable = true;
+
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+
   # services.displayManager.defaultSession = "sway";
   
   # programs.sway = {
@@ -82,12 +79,12 @@
     package = config.boot.kernelPackages.nvidiaPackages.production;
   };
 
-#   environment.sessionVariables = {
-#     "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
-#     "GBM_BACKEND" = "nvidia-drm";
-#     "WLR_NO_HARDWARE_CURSORS" = "1";
-#     # "WLR_RENDERER" = "vulkan";
-#   };
+  environment.sessionVariables = {
+    "__GLX_VENDOR_LIBRARY_NAME" = "nvidia";
+    "GBM_BACKEND" = "nvidia-drm";
+    "WLR_NO_HARDWARE_CURSORS" = "1";
+    # "WLR_RENDERER" = "vulkan";
+  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -136,10 +133,16 @@
     wl-clipboard
     mako
     firefox
+    brave
     alacritty
     waybar
     brightnessctl
     pavucontrol
+    hyprland
+    hyprpaper
+    nautilus
+    rofi-wayland
+    xdg-desktop-portal-hyprland
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
