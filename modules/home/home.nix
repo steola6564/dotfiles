@@ -1,13 +1,18 @@
 # modules/home/home.nix
-{ pkgs, ... }:
+{ pkgs, lib ? pkgs.lib, ... }:
 let
-  # powerlevel10k の属性名差異に両対応
-  p10k = if pkgs ? powerlevel10k
-         then pkgs.powerlevel10k
-         else pkgs.zsh-powerlevel10k;
-in
-{
-  # Brave 本体はそのまま入れる
+  isLinux  = pkgs.stdenv.isLinux;
+  isDarwin = pkgs.stdenv.isDarwin;
+in {
+  imports = [
+    ./base/git.nix
+    ./base/shell.nix
+  ] ++ lib.optionals pkgs.stdenv.isLinux [
+    ./linux/brave.nix
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+    #  ./darwin/...
+  ];
+
   home.packages = with pkgs; [
     brave
     repgrep
@@ -18,55 +23,8 @@ in
     bat
   ];
 
-  # フラグ付きランチャー（.desktop）を作成
-  xdg.desktopEntries."brave-wayland" = {
-    name = "Brave (Wayland IME)";
-    comment = "Chromium/Brave on Wayland with IME";
-    exec = "${pkgs.brave}/bin/brave --enable-features=UseOzonePlatform --ozone-platform=wayland --enable-wayland-ime %U";
-    icon = "brave-browser";
-    terminal = false;
-    categories = [ "Network" "WebBrowser" ];
-    type = "Application";
-    mimeType = [ "text/html" "x-scheme-handler/http" "x-scheme-handler/https" ];
-  };
-
   # 任意：Chromium/Electron系をWayland化（推奨）
   home.sessionVariables.NIXOS_OZONE_WL = "1";
-
-
-  # 必要に応じて追記していく
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
-
-    enableAutosuggestions = true;
-
-    oh-my-zsh = {
-      enable =true;
-      custom = "$HOME/.config/oh-my-zsh/custom";
-      plugins = [ "git" "z" "history" ];
-      # theme = "powerlevel10k/powerlevel10k";
-    };
-
-    initContent = ''
-      source ${p10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ~/.p10k.zsh
-    '';
-  };
-
-  
-  home.file.".p10k.zsh".source = ./p10k.zsh;
-
-  programs.git = {
-    enable = true;
-    userName = "steola";
-    userEmail = "ishishi.steola@outlook.com";
-  };
-
-  # Starship prompt は zsh 専用の p10k を使う限り不要。
-  # ただし将来的に p10k で制約や問題が出た際に切り替え可能とするためコメントアウトして保持。
-  # programs.starship.enable = true;
 
   home.stateVersion = "25.05";
 }
