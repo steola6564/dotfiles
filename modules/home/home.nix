@@ -38,7 +38,8 @@ in
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
+
     enableAutosuggestions = true;
 
     oh-my-zsh = {
@@ -48,7 +49,7 @@ in
       # theme = "powerlevel10k/powerlevel10k";
     };
 
-    initExtra = ''
+    initContent = ''
       source ${p10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       source ~/.p10k.zsh
     '';

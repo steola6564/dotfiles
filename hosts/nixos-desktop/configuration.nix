@@ -26,6 +26,8 @@
       # 好みで（どちらかを使うなら下3行は任意）
       source-han-sans-japanese     # 源ノ角ゴシック
       # source-han-serif-japanese    # 源ノ明朝
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
     ];
     fontconfig = {
       enable = true;
