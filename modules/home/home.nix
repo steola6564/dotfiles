@@ -1,5 +1,11 @@
 # modules/home/home.nix
 { pkgs, ... }:
+let
+  # powerlevel10k の属性名差異に両対応
+  p10k = if pkgs ? powerlevel10k
+         then pkgs.powerlevel10k
+         else pkgs.zsh-powerlevel10k;
+in
 {
   # Brave 本体はそのまま入れる
   home.packages = with pkgs; [
@@ -29,7 +35,28 @@
 
 
   # 必要に応じて追記していく
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableSyntaxHighlighting = true;
+    enableAutosuggestions = true;
+
+    oh-my-zsh = {
+      enable =true;
+      custom = "$HOME/.config/oh-my-zsh/custom";
+      plugins = [ "git" "z" "history" ];
+      # theme = "powerlevel10k/powerlevel10k";
+    };
+
+    initExtra = ''
+      source ${p10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      source ~/.p10k.zsh
+    '';
+  };
+
+  
+  home.file.".p10k.zsh".source = ./p10k.zsh;
+
   programs.git.enable = true;
   programs.starship.enable = true;
 
