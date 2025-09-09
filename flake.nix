@@ -20,6 +20,7 @@
       specialArgs = { inherit inputs; };  # modules/ops/agenix.nix で使う
       modules = [
         ./hosts/nixos-server/configuration.nix
+        home-manager.nixosModules.home-manager
 
         # overlay を有効化 + unfree許可維持
         ({ pkgs, ... }: {

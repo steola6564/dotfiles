@@ -44,8 +44,6 @@
 
   networking.hostName = "nixos-desktop";
 
-  system.stateVersion = "25.05"; # Did you read the comment?
-
   home-manager = {
     ## Home Manager（flake 側でモジュールを読み込み済み）
     useGlobalPkgs = true;

@@ -16,7 +16,7 @@ in {
       plugins = [ "git" "z" "history" ];
     };
 
-    initExtra = ''
+    initContent = ''
       source ${p10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
       source ~/.p10k.zsh
     '';

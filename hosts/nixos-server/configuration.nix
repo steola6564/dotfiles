@@ -18,5 +18,12 @@
   networking.hostName = "nixos-server";
 
   system.stateVersion = "25.05";
+
+  # Home Manager (共通の home モジュールを使う場合)
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.steola = import ../../modules/home/home.nix;
+  };
 }
 
