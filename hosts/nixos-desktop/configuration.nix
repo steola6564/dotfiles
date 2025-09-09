@@ -232,12 +232,13 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  ## Home Manager（flake 側でモジュールを読み込み済み）
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
+  home-manager = {
+    ## Home Manager（flake 側でモジュールを読み込み済み）
+    useGlobalPkgs = true;
+    useUserPackages = true;
 
-  # 単一ユーザー想定。必要なら "steola" を実ユーザーに置換
-  home-manager.users.steola = import ../../modules/home/home.nix;
-
+    # ← ここが大事：サブモジュールとして“imports”に渡す
+    users.steola = import ../../modules/home/home.nix;
+  };
 }
 

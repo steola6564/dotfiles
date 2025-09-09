@@ -7,11 +7,10 @@ in {
   imports = [
     ./base/git.nix
     ./base/shell.nix
-  ] ++ lib.optionals pkgs.stdenv.isLinux [
     ./linux/brave.nix
-  ] ++ lib.optionals pkgs.stdenv.isDarwin [
-    #  ./darwin/...
   ];
+    # ++ lib.optionals pkgs.stdenv.isLinux [ ./linux/brave.nix]
+    # ++ lib.optionals pkgs.stdenv.isDarwin [ /* ./darwin/... */ ];
 
   home.packages = with pkgs; [
     brave
