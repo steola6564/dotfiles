@@ -58,8 +58,15 @@ in
   
   home.file.".p10k.zsh".source = ./p10k.zsh;
 
-  programs.git.enable = true;
-  programs.starship.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "steola";
+    userEmail = "ishishi.steola@outlook.com";
+  };
+
+  # Starship prompt は zsh 専用の p10k を使う限り不要。
+  # ただし将来的に p10k で制約や問題が出た際に切り替え可能とするためコメントアウトして保持。
+  # programs.starship.enable = true;
 
   home.stateVersion = "25.05";
 }
