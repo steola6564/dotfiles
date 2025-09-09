@@ -6,6 +6,10 @@
     brave
     repgrep
     fd
+    volta
+    uv
+    tree
+    bat
   ];
 
   # フラグ付きランチャー（.desktop）を作成
