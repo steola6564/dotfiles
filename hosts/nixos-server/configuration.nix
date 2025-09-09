@@ -3,7 +3,7 @@
     ./hardware-configuration.nix
 
     # OS / profiles
-    ../../os/nixos.nix
+    ../../modules/system/nixos.nix
     ../../profiles/base.nix
     ../../profiles/server.nix
     ../../profiles/dev.nix
