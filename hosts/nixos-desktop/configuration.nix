@@ -17,6 +17,33 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  fonts = {
+    packages = with pkgs; [
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-emoji
+      # 好みで（どちらかを使うなら下3行は任意）
+      source-han-sans-japanese     # 源ノ角ゴシック
+      # source-han-serif-japanese    # 源ノ明朝
+    ];
+    fontconfig = {
+      enable = true;
+      allowBitmaps = false;     # ビットマップを使わない
+      antialias = true;
+      hinting.enable = true;
+      hinting.style = "slight"; # 文字のにじみ少なめ
+      subpixel.rgba = "rgb";
+      defaultFonts = {
+        serif = [ "Noto Serif CJK JP" "Noto Serif" ];
+        sansSerif = [ "Noto Sans CJK JP" "Noto Sans" ];
+        monospace = [ "Noto Sans Mono CJK JP" "Noto Sans Mono" ];
+        emoji = [ "Noto Color Emoji" ];
+      };
+    };
+  };
+
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_6_6;
 
@@ -157,6 +184,7 @@
     nautilus
     rofi-wayland
     xdg-desktop-portal-hyprland
+    home-manager
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -201,6 +229,13 @@
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "25.05"; # Did you read the comment?
+
+  ## Home Manager（flake 側でモジュールを読み込み済み）
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+
+  # 単一ユーザー想定。必要なら "steola" を実ユーザーに置換
+  home-manager.users.steola = import ../../modules/home/home.nix;
 
 }
 

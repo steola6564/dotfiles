@@ -5,9 +5,11 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
+    home-manager.url = "github:nix-community/home-manager/release-25.05";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, unstable, agenix, ... }:
+  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -38,6 +40,7 @@
       specialArgs = { inherit inputs; };
       modules = [
       ./hosts/nixos-desktop/configuration.nix
+      home-manager.nixosModules.home-manager
       ];
     };
   };
