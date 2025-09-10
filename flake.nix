@@ -40,8 +40,8 @@
       inherit system;
       specialArgs = { inherit inputs; };
       modules = [
-      ./hosts/nixos-desktop/configuration.nix
-      home-manager.nixosModules.home-manager
+        ./hosts/nixos-desktop/configuration.nix
+        home-manager.nixosModules.home-manager
       ];
     };
   };

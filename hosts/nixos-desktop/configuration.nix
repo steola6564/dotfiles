@@ -43,6 +43,9 @@
   ];
 
   networking.hostName = "nixos-desktop";
+  boot.kernelPackages = pkgs.linuxPackages_6_6;
+  # Keep this in system/base so all hosts can share a common baseline.
+  system.stateVersion = "25.05"; # Do not change without reading the manual
 
   home-manager = {
     ## Home Manager（flake 側でモジュールを読み込み済み）

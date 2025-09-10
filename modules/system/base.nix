@@ -1,9 +1,13 @@
 { config, lib, pkgs, ... }:
 {
-nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
-time.timeZone = "Asia/Tokyo";
+  time.timeZone = "Asia/Tokyo";
+  i18n.defaultLocale = "en_US.UTF-8";
 
-# Keep this in system/base so all hosts can share a common baseline.
-system.stateVersion = "25.05"; # Do not change without reading the manual
+  console = {
+    font = "Lat2-Terminus16";
+  };
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
