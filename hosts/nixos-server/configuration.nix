@@ -3,11 +3,11 @@
     ./hardware-configuration.nix
 
     # OS / profiles
-    ../../profiles/base.nix
     ../../profiles/server.nix
     ../../profiles/dev.nix
 
     # 機能モジュール
+    ../../modules/system/base.nix
     ../../modules/system/boot.nix
     ../../modules/system/cloudflared-service.nix
     ../../modules/users/steola.nix
