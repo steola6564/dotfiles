@@ -4,5 +4,5 @@
 Hosts/configuration.nixから各Modules内のファイルを適宜インポート、もしそのホスト固有でしたい設定とModules内のファイルの設定が衝突するなら、Profiles内のファイルで衝突回避
 
 ## The files will be deleted
-- nixos.nix
-- 
+- modules/system/nixos.nix
+- modules/system/users.nix

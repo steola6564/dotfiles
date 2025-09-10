@@ -9,8 +9,8 @@
 
     # 機能モジュール
     ../../modules/system/boot.nix
-    ../../modules/system/users.nix
     ../../modules/system/cloudflared-service.nix
+    ../../modules/users/steola.nix
     ../../modules/ops/agenix.nix
     ../../modules/ops/terraform.nix
     ../../modules/ui/fonts.nix
