@@ -13,7 +13,7 @@
   let
     system = "x86_64-linux";
   in {
-    overlays.default = import ./overlays/default.nix;
+    overlays.default = import ./overlays/cloudflared.nix;
 
     nixosConfigurations.nixos-server = nixpkgs.lib.nixosSystem {
       inherit system;

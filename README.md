@@ -4,5 +4,7 @@
 Hosts/configuration.nixから各Modules内のファイルを適宜インポート、もしそのホスト固有でしたい設定とModules内のファイルの設定が衝突するなら、Profiles内のファイルで衝突回避
 
 ## The files will be deleted
-- modules/system/nixos.nix
-- modules/system/users.nix
+- 
+
+## Feture
+- pkgsをcommon、gui、cli、等にまとめる

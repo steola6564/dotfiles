@@ -7,6 +7,7 @@
     description  = "Cloudflared Service user";
   };
 
+  console.keyMap = "jp106";
 
   services.openssh = {
     enable = true;
