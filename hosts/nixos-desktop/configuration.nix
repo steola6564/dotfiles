@@ -15,6 +15,7 @@
 
     # Networking
     ../../modules/networking/common.nix
+    ../../modules/networking/wol.nix
 
     # UI & Desktop
     ../../modules/ui/fonts.nix

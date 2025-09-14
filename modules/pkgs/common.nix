@@ -10,5 +10,6 @@
   hyprland hyprpaper
   nautilus rofi-wayland xdg-desktop-portal-hyprland
   home-manager
+  ethtool
   ];
 }
