@@ -40,21 +40,12 @@
     # Home Manager integration
     # If you prefer, you can also keep HM in the flake's 'homeConfigurations'.
     # Otherwise import this module to configure HM alongside the system.
-    # ../../modules/home-manager.nix
+    ../../modules/home-manager.nix
   ];
 
   networking.hostName = "nixos-desktop";
   boot.kernelPackages = pkgs.linuxPackages_6_6;
   # Keep this in system/base so all hosts can share a common baseline.
-  system.stateVersion = "25.05"; # Do not change without reading the manual
-
-  home-manager = {
-    ## Home Manager（flake 側でモジュールを読み込み済み）
-    useGlobalPkgs = true;
-    useUserPackages = true;
-
-    # ← ここが大事：サブモジュールとして“imports”に渡す
-    users.steola = import ../../modules/home/home.nix;
-  };
+  system.stateVersion = "25.05"; # Do not change without reading the manual 
 }
 
