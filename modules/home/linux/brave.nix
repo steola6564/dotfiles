@@ -1,6 +1,8 @@
 { pkgs, ... }: {
   home.packages = [ pkgs.brave ];
 
+  home.sessionVariables.NIXOS_OZONE_WL = "1";
+
   xdg.desktopEntries."brave-wayland" = {
     name = "Brave (Wayland IME)";
     comment = "Chromium/Brave on Wayland with IME";

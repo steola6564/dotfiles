@@ -3,7 +3,15 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.steola = import ../modules/home/home.nix; # relative to this file if you include differently, adjust path
+    users.steola = { ... }: {
+      imports = [
+        ../modules/home/home.nix
+      ] ++ lib.optionals (config.networking.hostName == "nixos-desktop") [
+        ../profiles/home/desktop.nix
+      ] ++ lib.optionals (config.networking.hostName == "nixos-server") [
+        ../profiles/home/server.nix
+      ];
+    };
   };
 }
 
