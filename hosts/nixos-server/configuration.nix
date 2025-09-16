@@ -14,17 +14,11 @@
     ../../modules/ops/agenix.nix
     ../../modules/ops/terraform.nix
     ../../modules/ui/fonts.nix
+    ../../modules/home-manager.nix
   ];
 
   networking.hostName = "nixos-server";
   boot.kernelPackages = pkgs.linuxPackages_latest;
   system.stateVersion = "25.05";
-
-  # Home Manager (共通の home モジュールを使う場合)
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.steola = import ../../modules/home/home.nix;
-  };
 }
 
