@@ -5,6 +5,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
+    nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
@@ -42,6 +43,13 @@
       modules = [
         ./hosts/nixos-desktop/configuration.nix
         home-manager.nixosModules.home-manager
+      ];
+    };
+    darwinConfigurations."darwin-air" = inputs.nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      modules = [
+        ./hosts/darwin-air/configuration.nix
+        home-manager.darwinModules.home-manager
       ];
     };
   };
