@@ -8,7 +8,7 @@
     # jq
     alacritty
   ];
-  # programs.neovim.enable = true;
+  programs.neovim.enable = true;
   programs.alacritty.enable = true;
 }
 
