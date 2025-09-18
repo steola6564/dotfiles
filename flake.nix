@@ -47,6 +47,7 @@
     };
     darwinConfigurations."darwin-air" = inputs.nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
+      specialArgs = { hostname = "darwin-air"; };
       modules = [
         ./hosts/darwin-air/configuration.nix
         home-manager.darwinModules.home-manager

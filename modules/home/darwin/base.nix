@@ -4,8 +4,11 @@
   home.homeDirectory = "/Users/steola";
   home.packages = with pkgs; [
     # htop
-    neovim
+    # neovim
     # jq
+    alacritty
   ];
+  # programs.neovim.enable = true;
+  programs.alacritty.enable = true;
 }
 

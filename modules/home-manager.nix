@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, hostname ? null, ... }:
 {
   home-manager = {
     useGlobalPkgs = true;
@@ -10,9 +10,9 @@
         ../profiles/home/desktop.nix
       ] ++ lib.optionals (config.networking.hostName == "nixos-server") [
         ../profiles/home/server.nix
-      ] ++ lib.optionals (config.networking.hostName == "darwin-air") [
+      ] ++ lib.optionals (hostname == "darwin-air") [
         ../modules/home/darwin/base.nix
-        ../profiles/home/air.nix
+        # ../profiles/home/air.nix
       ];
     };
   };
