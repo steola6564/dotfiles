@@ -1,7 +1,6 @@
 { ... }:
-
 {
-  # imports = [
-     # ../../modules/home/linux/brave.nix
-  # ];
+  imports = [
+     ../../modules/home/darwin/fonts.nix
+  ];
 }
