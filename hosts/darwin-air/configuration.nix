@@ -24,13 +24,5 @@
     # curl
     # vim
   ];
-    
-       # Darwin 側にもユーザーの home を明示（HM のフォールバックにもなる）
-       users.users.steola.home = "/Users/steola";
-       # users.users.${username}.shell = pkgs.zsh; # 任意
-
-       home-manager.useGlobalPkgs = true;
-       home-manager.useUserPackages = true;
-       home-manager.users.steola = import ../../modules/home/darwin/home.nix;
 }
 

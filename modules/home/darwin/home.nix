@@ -9,6 +9,7 @@
 
   home.packages = with pkgs; [
     # htop
+    neovim
     # jq
   ];
 }
