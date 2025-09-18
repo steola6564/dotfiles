@@ -17,6 +17,7 @@
   imports = [ 
     ../../modules/home-manager.nix
     ../../modules/darwin/brew.nix
+    ../../modules/darwin/mas.nix
   ];
 }
 

@@ -10,7 +10,7 @@
     # App Store アプリを declarative に管理したい場合はこちらに追加
     masApps = {
       # Slack = 803453959;
-      # LINE = 539883307;
+      LINE = 539883307;
     };
   };
 }
