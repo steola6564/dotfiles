@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 {
+  imports = [ 
+    ../../modules/home-manager.nix
+  ];
+
   # 必須：新規インストールの基準値（今は 6）
   system.stateVersion = 6;
 
@@ -24,5 +28,6 @@
     # curl
     # vim
   ];
+  users.users.steola.home = "/Users/steola";
 }
 

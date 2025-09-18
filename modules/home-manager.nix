@@ -11,8 +11,8 @@
       ] ++ lib.optionals (config.networking.hostName == "nixos-server") [
         ../profiles/home/server.nix
       ] ++ lib.optionals (config.networking.hostName == "darwin-air") [
-        users.users.steola.home = "/Users/steola";
         ./home/darwin/home.nix
+        ../profiles/home/air.nix
       ];
     };
   };
