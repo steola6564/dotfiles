@@ -13,6 +13,7 @@
     uv
     tree
     bat
+    git
   ];
 
   home.stateVersion = "25.05";
