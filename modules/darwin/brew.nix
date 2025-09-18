@@ -6,13 +6,7 @@
     enable = true;
 
     # 自動で不要なパッケージを削除する
-    cleanup = "zap";
-
-    # 追加の tap
-    taps = [
-      "homebrew/cask"
-      "homebrew/cask-fonts"
-    ];
+    onActivation.cleanup = "zap";
 
     # 通常の brew formula
     brews = [
@@ -28,13 +22,8 @@
       # "alacritty"
       # "visual-studio-code"
     ];
+
+    onActivation.upgrade = true;
   };
-  # Home Manager 側で zsh に brew の PATH を通す
-  programs.zsh.profileExtra = ''
-    # Homebrew (Apple Silicon)
-    if [ -x /opt/homebrew/bin/brew ]; then
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-    fi
-  '';
 }
 

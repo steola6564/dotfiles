@@ -11,9 +11,12 @@
   # 最近の変更でnix.enable = true;のみで良くなった
   # services.nix-daemon.enable = true;
 
+  system.primaryUser = "steola";
+
   users.users.steola.home = "/Users/steola";
   imports = [ 
     ../../modules/home-manager.nix
+    ../../modules/darwin/brew.nix
   ];
 }
 
