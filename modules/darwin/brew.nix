@@ -11,8 +11,7 @@
     # 通常の brew formula
     brews = [
       # "wget"
-      # "git"
-      # "htop"
+      "displayplacer"
     ];
 
     # cask (GUI apps / fonts)
@@ -24,6 +23,7 @@
       "jordanbaird-ice"
       "discord"
       "slack"
+      "visual-studio-code"
       # "alacritty"
       # "visual-studio-code"
     ];
