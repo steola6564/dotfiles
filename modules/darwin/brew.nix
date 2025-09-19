@@ -19,6 +19,11 @@
     casks = [
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
+      "nikitabobko/tap/aerospace"
+      "brave-browser"
+      "jordanbaird-ice"
+      "discord"
+      "slack"
       # "alacritty"
       # "visual-studio-code"
     ];
