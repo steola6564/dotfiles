@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 {
   home.username = "steola";
   home.homeDirectory = "/Users/steola";
@@ -9,5 +9,10 @@
     # htop
   ];
   programs.alacritty.enable = true;
+
+  home.activation.setTrackpadSpeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    /usr/bin/defaults write -g com.apple.trackpad.scaling -float 10.0
+  '';
+
 }
 

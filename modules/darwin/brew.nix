@@ -11,7 +11,6 @@
     # 通常の brew formula
     brews = [
       # "wget"
-      "displayplacer"
     ];
 
     # cask (GUI apps / fonts)
