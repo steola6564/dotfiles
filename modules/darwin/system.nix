@@ -25,6 +25,19 @@
     trackpad = {
       Clicking = true;
     };
+    # Finder 設定
+    finder = {
+      AppleShowAllExtensions = true; # 拡張子を常に表示
+      ShowPathbar = true;            # パスバーを表示
+      ShowStatusBar = true;          # ステータスバーを表示
+    };
+    # Global 設定
+    NSGlobalDomain = {
+      AppleInterfaceStyle = "Dark";  # ダークモード
+      AppleShowAllFiles = true;      # 隠しファイルを表示
+    };
   };
+  # Touch ID for sudo (トップレベルで指定)
+  security.pam.services.sudo_local.touchIdAuth = true;
 }
 
