@@ -30,11 +30,16 @@
       AppleShowAllExtensions = true; # 拡張子を常に表示
       ShowPathbar = true;            # パスバーを表示
       ShowStatusBar = true;          # ステータスバーを表示
+      FXPreferredViewStyle = "Nlsv"; # デフォルト表示形式 (List View)
     };
     # Global 設定
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";  # ダークモード
       AppleShowAllFiles = true;      # 隠しファイルを表示
+    };
+    screencapture = {
+      location = "/Users/steola/Pictures/ScreenShots"; # 保存先
+      type = "png";                                    # フォーマット
     };
   };
   # Touch ID for sudo (トップレベルで指定)
