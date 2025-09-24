@@ -23,7 +23,7 @@
       "discord"
       "slack"
       "visual-studio-code"
-      # "alacritty"
+      "alacritty"
       # "visual-studio-code"
     ];
 
