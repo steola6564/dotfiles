@@ -11,6 +11,7 @@
     # 通常の brew formula
     brews = [
       # "wget"
+      "sketchybar"
     ];
 
     # cask (GUI apps / fonts)
@@ -19,14 +20,13 @@
       "font-fira-code-nerd-font"
       "nikitabobko/tap/aerospace"
       "brave-browser"
-      "jordanbaird-ice"
       "discord"
       "slack"
       "visual-studio-code"
       "alacritty"
       # "visual-studio-code"
+      "obsidian"
     ];
-
     onActivation.upgrade = true;
   };
 }

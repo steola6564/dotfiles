@@ -41,6 +41,9 @@
       location = "/Users/steola/Pictures/ScreenShots"; # 保存先
       type = "png";                                    # フォーマット
     };
+    spaces = {
+      spans-displays = true;
+    };
   };
   # Touch ID for sudo (トップレベルで指定)
   security.pam.services.sudo_local.touchIdAuth = true;

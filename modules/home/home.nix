@@ -14,6 +14,7 @@
     tree
     bat
     git
+    zellij
   ];
 
   home.stateVersion = "25.05";
