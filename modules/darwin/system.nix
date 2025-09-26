@@ -21,6 +21,8 @@
       ];
       # 他にあれば Dock の位置やサイズなどのオプションも入れられるが、
       # ドキュメントにそのオプションが存在するか確認が必要
+      # ★ Mission Control: ウィンドウをアプリごとにグループ化
+      expose-group-apps = true;
     };
     trackpad = {
       Clicking = true;
@@ -41,11 +43,17 @@
       location = "/Users/steola/Pictures/ScreenShots"; # 保存先
       type = "png";                                    # フォーマット
     };
-    spaces = {
-      spans-displays = true;
-    };
   };
   # Touch ID for sudo (トップレベルで指定)
   security.pam.services.sudo_local.touchIdAuth = true;
+
+  system.activationScripts.install-rosetta.text = ''
+    if ! /usr/bin/pgrep oahd >/dev/null 2>&1; then
+      echo "Rosetta 2 not found. Installing..."
+      /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+    else
+      echo "Rosetta 2 already installed."
+    fi
+  '';
 }
 

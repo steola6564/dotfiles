@@ -24,8 +24,8 @@
       "slack"
       "visual-studio-code"
       "alacritty"
-      # "visual-studio-code"
       "obsidian"
+      # "google-japanese-ime"
     ];
     onActivation.upgrade = true;
   };
