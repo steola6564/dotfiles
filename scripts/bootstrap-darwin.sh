@@ -9,6 +9,16 @@ else
   BREW_PREFIX="/usr/local"
 fi
 
+# Install Rosetta (only if Apple Silicon)
+if [[ "$ARCH" == "arm64" ]]; then
+  if ! /usr/bin/pgrep oahd >/dev/null 2>&1; then
+    echo "[INFO] Rosetta 2 not found. Installing..."
+    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
+  else
+    echo "[INFO] Rosetta 2 already installed."
+  fi
+fi
+
 # Check if Homebrew is already installed
 if ! command -v brew >/dev/null 2>&1; then
   echo "[INFO] Homebrew not found. Installing to $BREW_PREFIX ..."

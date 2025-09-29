@@ -25,7 +25,7 @@
       "visual-studio-code"
       "alacritty"
       "obsidian"
-      # "google-japanese-ime"
+      "google-japanese-ime"
     ];
     onActivation.upgrade = true;
   };

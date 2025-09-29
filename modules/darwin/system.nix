@@ -46,14 +46,5 @@
   };
   # Touch ID for sudo (トップレベルで指定)
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  system.activationScripts.install-rosetta.text = ''
-    if ! /usr/bin/pgrep oahd >/dev/null 2>&1; then
-      echo "Rosetta 2 not found. Installing..."
-      /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-    else
-      echo "Rosetta 2 already installed."
-    fi
-  '';
 }
 
