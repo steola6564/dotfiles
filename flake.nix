@@ -8,9 +8,11 @@
     nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, ... }:
+  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -51,6 +53,12 @@
       modules = [
         ./hosts/darwin-air/configuration.nix
         home-manager.darwinModules.home-manager
+	({ pkgs, ... }: {
+          nixpkgs.overlays = [
+	    self.overlays.default
+	    vscode-extensions.overlays.default
+	  ];
+	})
       ];
     };
   };
