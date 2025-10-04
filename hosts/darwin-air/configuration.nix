@@ -16,6 +16,7 @@
   users.users.steola.home = "/Users/steola";
   imports = [ 
     ../../modules/home-manager.nix
+    ../../modules/pkgs/common.nix
     ../../modules/darwin/system.nix
     ../../modules/darwin/brew.nix
     ../../modules/darwin/mas.nix

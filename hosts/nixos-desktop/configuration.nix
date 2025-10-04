@@ -35,6 +35,7 @@
 
     # Packages & Services
     ../../modules/pkgs/common.nix
+    ../../modules/pkgs/gui.nix
     ../../modules/services/common.nix
     
     # Home Manager integration
