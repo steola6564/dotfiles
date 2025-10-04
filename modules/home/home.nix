@@ -4,7 +4,6 @@
   imports = [
     ./base/git.nix
     ./base/shell.nix
-    ./base/vscode.nix
   ];
 
   home.packages = with pkgs; [
