@@ -17,6 +17,7 @@
   imports = [ 
     ../../modules/home-manager.nix
     ../../modules/pkgs/common.nix
+    ../../modules/ops/agenix.nix
     ../../modules/darwin/system.nix
     ../../modules/darwin/brew.nix
     ../../modules/darwin/mas.nix
