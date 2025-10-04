@@ -20,7 +20,10 @@
 
     nixosConfigurations.nixos-server = nixpkgs.lib.nixosSystem {
       inherit system;
-      specialArgs = { inherit inputs; };  # modules/ops/agenix.nix で使う
+      specialArgs = {
+        inherit inputs;
+	hostname = "nixos-server";
+      };  # modules/ops/agenix.nix で使う
       modules = [
         ./hosts/nixos-server/configuration.nix
         home-manager.nixosModules.home-manager
