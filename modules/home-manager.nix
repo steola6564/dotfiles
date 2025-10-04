@@ -11,7 +11,6 @@
       ] ++ lib.optionals (config.networking.hostName == "nixos-server") [
         ../profiles/home/server.nix
       ] ++ lib.optionals (hostname == "darwin-air") [
-        ../modules/home/darwin/base.nix
         ../profiles/home/air.nix
       ];
     };

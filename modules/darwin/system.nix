@@ -44,6 +44,11 @@
       type = "png";                                    # フォーマット
     };
   };
+  system.activationScripts.setTrackpadScaling = {
+    text = ''
+      /usr/bin/defaults write -g com.apple.trackpad.scaling -float 7.5
+    '';
+  };
   # Touch ID for sudo (トップレベルで指定)
   security.pam.services.sudo_local.touchIdAuth = true;
 }

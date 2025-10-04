@@ -8,10 +8,6 @@
     # htop
   ];
 
-  home.activation.setTrackpadSpeed = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    /usr/bin/defaults write -g com.apple.trackpad.scaling -float 7.5
-  '';
-
   xdg.configFile."alacritty/alacritty.toml".source =
     ./config/alacritty.toml;
 }
