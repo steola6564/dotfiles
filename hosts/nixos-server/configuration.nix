@@ -10,6 +10,7 @@
     ../../modules/system/base.nix
     ../../modules/system/boot.nix
     ../../modules/system/cloudflared-service.nix
+    # ../../modules/services/nextcloud.nix
     ../../modules/users/steola.nix
     ../../modules/ops/agenix.nix
     ../../modules/ops/terraform.nix
