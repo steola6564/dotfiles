@@ -8,10 +8,14 @@
     # 自動で不要なパッケージを削除する
     onActivation.cleanup = "zap";
 
+    taps = [
+      "FelixKratz/formulae"
+    ];
+
     # 通常の brew formula
     brews = [
       # "wget"
-      "sketchybar"
+      "FelixKratz/formulae/sketchybar"
     ];
 
     # cask (GUI apps / fonts)
