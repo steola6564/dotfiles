@@ -39,10 +39,11 @@
       AppleInterfaceStyle = "Dark";  # ダークモード
       AppleShowAllFiles = true;      # 隠しファイルを表示
     };
-    # screencapture = {
-      # location = "/Users/steola/Pictures/ScreenShots"; # 保存先
-       #type = "png";                                    # フォーマット
-     #};
+    screencapture = {
+      # スクリーンショットの保存先ディレクトリを作らないといけない
+      location = "/Users/steola/Pictures/ScreenShots"; # 保存先
+      type = "png";                                    # フォーマット
+    };
   };
   # system.activationScripts.setTrackpadScaling = {
     # text = ''
