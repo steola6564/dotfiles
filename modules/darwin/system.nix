@@ -24,31 +24,31 @@
       # ★ Mission Control: ウィンドウをアプリごとにグループ化
       expose-group-apps = true;
     };
-    trackpad = {
-      Clicking = true;
-    };
+    # trackpad = {
+      # Clicking = true;
+    # };
     # Finder 設定
     finder = {
       AppleShowAllExtensions = true; # 拡張子を常に表示
       ShowPathbar = true;            # パスバーを表示
       ShowStatusBar = true;          # ステータスバーを表示
-      FXPreferredViewStyle = "Nlsv"; # デフォルト表示形式 (List View)
+      # FXPreferredViewStyle = "Nlsv"; # デフォルト表示形式 (List View)
     };
     # Global 設定
     NSGlobalDomain = {
       AppleInterfaceStyle = "Dark";  # ダークモード
       AppleShowAllFiles = true;      # 隠しファイルを表示
     };
-    screencapture = {
-      location = "/Users/steola/Pictures/ScreenShots"; # 保存先
-      type = "png";                                    # フォーマット
-    };
+    # screencapture = {
+      # location = "/Users/steola/Pictures/ScreenShots"; # 保存先
+       #type = "png";                                    # フォーマット
+     #};
   };
-  system.activationScripts.setTrackpadScaling = {
-    text = ''
-      /usr/bin/defaults write -g com.apple.trackpad.scaling -float 7.5
-    '';
-  };
+  # system.activationScripts.setTrackpadScaling = {
+    # text = ''
+       #/usr/bin/defaults write -g com.apple.trackpad.scaling -float 7.5
+    # '';
+  # };
   # Touch ID for sudo (トップレベルで指定)
   security.pam.services.sudo_local.touchIdAuth = true;
 }
