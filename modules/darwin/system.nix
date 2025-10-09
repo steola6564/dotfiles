@@ -13,10 +13,23 @@
       # Dock の拡大表示を有効化
       magnification = true;
       # 拡大時の最大サイズ（デフォルト 128、範囲 16〜128）
-      largesize = 85;
+      largesize = 95;
       # Dock の位置（bottom / left / right）
       orientation = "bottom";
       persistent-apps = [
+        "/System/Applications/App Store.app"
+	"/Applications/Safari.app"
+        "/Applications/Brave Browser.app"
+        "/Applications/Google Chrome.app"
+        "/System/Applications/Mail.app"
+        "/Applications/Visual Studio Code.app"
+        "/Applications/UpNote.app"
+        "/Applications/Raindrop.io.app"
+        "/Applications/Zotero.app"
+        "/Applications/Obsidian.app"
+        "/Applications/Discord.app"
+        "/Applications/LINE.app"
+        "/Applications/Alacritty.app"
         "/System/Applications/System Settings.app"
       ];
       # 他にあれば Dock の位置やサイズなどのオプションも入れられるが、

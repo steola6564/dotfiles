@@ -23,6 +23,8 @@
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
       "nikitabobko/tap/aerospace"
+      "deepl"
+      "utm"
       "brave-browser"
       "discord"
       "slack"
@@ -30,6 +32,9 @@
       "alacritty"
       "obsidian"
       "google-japanese-ime"
+      "google-chrome"
+      "raindropio"
+      "zotero"
     ];
     onActivation.upgrade = true;
   };
