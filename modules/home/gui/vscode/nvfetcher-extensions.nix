@@ -96,15 +96,6 @@ with pkgs.vscode-utils; [
 
   (buildVscodeMarketplaceExtension {
     mktplcRef = {
-      publisher = "svelte";
-      name = "svelte-vscode";
-      version = generated."svelte.svelte-vscode".version;
-    };
-    vsix = generated."svelte.svelte-vscode".src;
-  })
-
-  (buildVscodeMarketplaceExtension {
-    mktplcRef = {
       publisher = "marp-team";
       name = "marp-vscode";
       version = generated."marp-team.marp-vscode".version;

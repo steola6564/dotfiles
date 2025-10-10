@@ -25,6 +25,9 @@ with pkgs.vscode-extensions; [
   ms-ceintl.vscode-language-pack-ja
   vscode-icons-team.vscode-icons
 
+  # === svelte ===
+  svelte.svelte-vscode
+
   # === Markdown ===
   yzhang.markdown-all-in-one
 ]
