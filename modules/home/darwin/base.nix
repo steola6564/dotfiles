@@ -9,6 +9,6 @@
   ];
 
   xdg.configFile."alacritty/alacritty.toml".source =
-    ./config/alacritty.toml;
+    ../gui/config/alacritty.toml;
 }
 
