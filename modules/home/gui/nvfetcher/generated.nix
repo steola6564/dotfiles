@@ -6,6 +6,15 @@
   dockerTools,
 }:
 {
+  "1yib.svelte-bundle" = {
+    pname = "1yib.svelte-bundle";
+    version = "1.0.0";
+    src = fetchurl {
+      url = "https://1yib.gallery.vsassets.io/_apis/public/gallery/publisher/1yib/extension/svelte-bundle/1.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "svelte-bundle-1.0.0.zip";
+      sha256 = "sha256-mgDCNaFdWBghi28g3aW+6ikTlsIZ3P78c9Gjme6GB88=";
+    };
+  };
   "evilz.vscode-reveal" = {
     pname = "evilz.vscode-reveal";
     version = "4.3.3";
@@ -13,6 +22,15 @@
       url = "https://evilz.gallery.vsassets.io/_apis/public/gallery/publisher/evilz/extension/vscode-reveal/4.3.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "vscode-reveal-4.3.3.zip";
       sha256 = "sha256-KqvQi0DMfHppX96qKHIkO9zIueBdGGV+6dYkpFEzFBo=";
+    };
+  };
+  "fivethree.vscode-svelte-snippets" = {
+    pname = "fivethree.vscode-svelte-snippets";
+    version = "0.5.0";
+    src = fetchurl {
+      url = "https://fivethree.gallery.vsassets.io/_apis/public/gallery/publisher/fivethree/extension/vscode-svelte-snippets/0.5.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-svelte-snippets-0.5.0.zip";
+      sha256 = "sha256-dqeaEQkugUo0z+CbULREGvW2Sq/y3MfqKPgK9fDd37o=";
     };
   };
   "janisdd.vscode-edit-csv" = {
@@ -24,6 +42,15 @@
       sha256 = "sha256-8buRNSxfKmf9+MZDvFOOyrbXtbIC7GbHPRCBVnAHXrA=";
     };
   };
+  "marp-team.marp-vscode" = {
+    pname = "marp-team.marp-vscode";
+    version = "3.3.0";
+    src = fetchurl {
+      url = "https://marp-team.gallery.vsassets.io/_apis/public/gallery/publisher/marp-team/extension/marp-vscode/3.3.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "marp-vscode-3.3.0.zip";
+      sha256 = "sha256-Z/dhVvmyhyjEM3QUswLA2ExXeFIRzNOUn7Kd6s/C50k=";
+    };
+  };
   "mattn.lisp" = {
     pname = "mattn.lisp";
     version = "0.1.12";
@@ -31,6 +58,60 @@
       url = "https://mattn.gallery.vsassets.io/_apis/public/gallery/publisher/mattn/extension/Lisp/0.1.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
       name = "Lisp-0.1.12.zip";
       sha256 = "sha256-x6aFrcX0YElEFEr0qA669/LPlab15npmXd5Q585pIEw=";
+    };
+  };
+  "mechatroner.rainbow-csv" = {
+    pname = "mechatroner.rainbow-csv";
+    version = "3.23.0";
+    src = fetchurl {
+      url = "https://mechatroner.gallery.vsassets.io/_apis/public/gallery/publisher/mechatroner/extension/rainbow-csv/3.23.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "rainbow-csv-3.23.0.zip";
+      sha256 = "sha256-HEbx7vjuVFjAG0koFI/JRehivRiLBF0cgx24LhdwCBc=";
+    };
+  };
+  "ms-azuretools.vscode-docker" = {
+    pname = "ms-azuretools.vscode-docker";
+    version = "2.0.0";
+    src = fetchurl {
+      url = "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/2.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vscode-docker-2.0.0.zip";
+      sha256 = "sha256-Yxysekp9nC91g7M5oXppOF+Rf4Jf/PD+X3inmdVfVmo=";
+    };
+  };
+  "ms-vscode-remote.remote-containers" = {
+    pname = "ms-vscode-remote.remote-containers";
+    version = "0.429.0";
+    src = fetchurl {
+      url = "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-containers/0.429.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "remote-containers-0.429.0.zip";
+      sha256 = "sha256-t6skFa2R8+zSBM33CYocf3AOQV5z206mrMPpxzQZEQU=";
+    };
+  };
+  "ms-vsliveshare.vsliveshare" = {
+    pname = "ms-vsliveshare.vsliveshare";
+    version = "1.0.5959";
+    src = fetchurl {
+      url = "https://ms-vsliveshare.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vsliveshare/extension/vsliveshare/1.0.5959/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "vsliveshare-1.0.5959.zip";
+      sha256 = "sha256-MibP2zqTwlXXVsXQOSuoi5SO8BskJC/AihrhJFg8tac=";
+    };
+  };
+  "ritwickdey.liveserver" = {
+    pname = "ritwickdey.liveserver";
+    version = "5.7.9";
+    src = fetchurl {
+      url = "https://ritwickdey.gallery.vsassets.io/_apis/public/gallery/publisher/ritwickdey/extension/liveserver/5.7.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "liveserver-5.7.9.zip";
+      sha256 = "sha256-w0CYSEOdltwMFzm5ZhOxSrxqQ1y4+gLfB8L+EFFgzDc=";
+    };
+  };
+  "yandeu.five-server" = {
+    pname = "yandeu.five-server";
+    version = "0.3.9";
+    src = fetchurl {
+      url = "https://yandeu.gallery.vsassets.io/_apis/public/gallery/publisher/yandeu/extension/five-server/0.3.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "five-server-0.3.9.zip";
+      sha256 = "sha256-FHZpqUSsgQG6gD53Or72N4/gVekiytR8RPHeRH99xLA=";
     };
   };
 }

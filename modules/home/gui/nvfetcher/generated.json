@@ -1,4 +1,19 @@
 {
+    "1yib.svelte-bundle": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "1yib.svelte-bundle",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "svelte-bundle-1.0.0.zip",
+            "sha256": "sha256-mgDCNaFdWBghi28g3aW+6ikTlsIZ3P78c9Gjme6GB88=",
+            "type": "url",
+            "url": "https://1yib.gallery.vsassets.io/_apis/public/gallery/publisher/1yib/extension/svelte-bundle/1.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "1.0.0"
+    },
     "evilz.vscode-reveal": {
         "cargoLock": null,
         "date": null,
@@ -13,6 +28,21 @@
             "url": "https://evilz.gallery.vsassets.io/_apis/public/gallery/publisher/evilz/extension/vscode-reveal/4.3.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
         "version": "4.3.3"
+    },
+    "fivethree.vscode-svelte-snippets": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "fivethree.vscode-svelte-snippets",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "vscode-svelte-snippets-0.5.0.zip",
+            "sha256": "sha256-dqeaEQkugUo0z+CbULREGvW2Sq/y3MfqKPgK9fDd37o=",
+            "type": "url",
+            "url": "https://fivethree.gallery.vsassets.io/_apis/public/gallery/publisher/fivethree/extension/vscode-svelte-snippets/0.5.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.5.0"
     },
     "janisdd.vscode-edit-csv": {
         "cargoLock": null,
@@ -29,6 +59,21 @@
         },
         "version": "0.11.7"
     },
+    "marp-team.marp-vscode": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "marp-team.marp-vscode",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "marp-vscode-3.3.0.zip",
+            "sha256": "sha256-Z/dhVvmyhyjEM3QUswLA2ExXeFIRzNOUn7Kd6s/C50k=",
+            "type": "url",
+            "url": "https://marp-team.gallery.vsassets.io/_apis/public/gallery/publisher/marp-team/extension/marp-vscode/3.3.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "3.3.0"
+    },
     "mattn.lisp": {
         "cargoLock": null,
         "date": null,
@@ -43,5 +88,95 @@
             "url": "https://mattn.gallery.vsassets.io/_apis/public/gallery/publisher/mattn/extension/Lisp/0.1.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
         "version": "0.1.12"
+    },
+    "mechatroner.rainbow-csv": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "mechatroner.rainbow-csv",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "rainbow-csv-3.23.0.zip",
+            "sha256": "sha256-HEbx7vjuVFjAG0koFI/JRehivRiLBF0cgx24LhdwCBc=",
+            "type": "url",
+            "url": "https://mechatroner.gallery.vsassets.io/_apis/public/gallery/publisher/mechatroner/extension/rainbow-csv/3.23.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "3.23.0"
+    },
+    "ms-azuretools.vscode-docker": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "ms-azuretools.vscode-docker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "vscode-docker-2.0.0.zip",
+            "sha256": "sha256-Yxysekp9nC91g7M5oXppOF+Rf4Jf/PD+X3inmdVfVmo=",
+            "type": "url",
+            "url": "https://ms-azuretools.gallery.vsassets.io/_apis/public/gallery/publisher/ms-azuretools/extension/vscode-docker/2.0.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "2.0.0"
+    },
+    "ms-vscode-remote.remote-containers": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "ms-vscode-remote.remote-containers",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "remote-containers-0.429.0.zip",
+            "sha256": "sha256-t6skFa2R8+zSBM33CYocf3AOQV5z206mrMPpxzQZEQU=",
+            "type": "url",
+            "url": "https://ms-vscode-remote.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vscode-remote/extension/remote-containers/0.429.0/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.429.0"
+    },
+    "ms-vsliveshare.vsliveshare": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "ms-vsliveshare.vsliveshare",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "vsliveshare-1.0.5959.zip",
+            "sha256": "sha256-MibP2zqTwlXXVsXQOSuoi5SO8BskJC/AihrhJFg8tac=",
+            "type": "url",
+            "url": "https://ms-vsliveshare.gallery.vsassets.io/_apis/public/gallery/publisher/ms-vsliveshare/extension/vsliveshare/1.0.5959/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "1.0.5959"
+    },
+    "ritwickdey.liveserver": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "ritwickdey.liveserver",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "liveserver-5.7.9.zip",
+            "sha256": "sha256-w0CYSEOdltwMFzm5ZhOxSrxqQ1y4+gLfB8L+EFFgzDc=",
+            "type": "url",
+            "url": "https://ritwickdey.gallery.vsassets.io/_apis/public/gallery/publisher/ritwickdey/extension/liveserver/5.7.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "5.7.9"
+    },
+    "yandeu.five-server": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "yandeu.five-server",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "five-server-0.3.9.zip",
+            "sha256": "sha256-FHZpqUSsgQG6gD53Or72N4/gVekiytR8RPHeRH99xLA=",
+            "type": "url",
+            "url": "https://yandeu.gallery.vsassets.io/_apis/public/gallery/publisher/yandeu/extension/five-server/0.3.9/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.3.9"
     }
 }

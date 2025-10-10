@@ -9,3 +9,46 @@ fetch.vsmarketplace = "janisdd.vscode-edit-csv"
 ["mattn.lisp"]
 src.vsmarketplace   = "mattn.Lisp"
 fetch.vsmarketplace = "mattn.Lisp"
+
+# 有効化して良い拡張機能
+["1yib.svelte-bundle"]
+src.vsmarketplace = "1yib.svelte-bundle"
+fetch.vsmarketplace = "1yib.svelte-bundle"
+
+["fivethree.vscode-svelte-snippets"]
+src.vsmarketplace = "fivethree.vscode-svelte-snippets"
+fetch.vsmarketplace = "fivethree.vscode-svelte-snippets"
+
+["yandeu.five-server"]
+src.vsmarketplace = "yandeu.five-server"
+fetch.vsmarketplace = "yandeu.five-server"
+
+["ms-azuretools.vscode-docker"]
+src.vsmarketplace = "ms-azuretools.vscode-docker"
+fetch.vsmarketplace = "ms-azuretools.vscode-docker"
+
+["ms-vscode-remote.remote-containers"]
+src.vsmarketplace = "ms-vscode-remote.remote-containers"
+fetch.vsmarketplace = "ms-vscode-remote.remote-containers"
+
+["mechatroner.rainbow-csv"]
+src.vsmarketplace = "mechatroner.rainbow-csv"
+fetch.vsmarketplace = "mechatroner.rainbow-csv"
+
+["ms-vsliveshare.vsliveshare"]
+src.vsmarketplace = "ms-vsliveshare.vsliveshare"
+fetch.vsmarketplace = "ms-vsliveshare.vsliveshare"
+
+# 代替／注意推奨拡張 → 後継または代替を含める
+
+# yzane.markdown-pdf は更新停止しているので代替として marp-team.marp-vscode を追加
+["marp-team.marp-vscode"]
+src.vsmarketplace = "marp-team.marp-vscode"
+fetch.vsmarketplace = "marp-team.marp-vscode"
+
+# ritwickdey.liveserver は更新少なめなので、five-server を既に入れてあるが
+# 両方入れておく余裕があれば Liveserver も入れておく
+["ritwickdey.liveserver"]
+src.vsmarketplace = "ritwickdey.liveserver"
+fetch.vsmarketplace = "ritwickdey.liveserver"
+
