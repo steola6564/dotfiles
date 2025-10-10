@@ -24,18 +24,13 @@
       sha256 = "sha256-8buRNSxfKmf9+MZDvFOOyrbXtbIC7GbHPRCBVnAHXrA=";
     };
   };
-  "mattn.vscode-lisp" = {
-    pname = "mattn.vscode-lisp";
-    version = "09f9077526364501763414f8dd3a6aeff9e69f0e";
-    src = fetchgit {
-      url = "https://github.com/mattn/vscode-lisp.git";
-      rev = "09f9077526364501763414f8dd3a6aeff9e69f0e";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-bwDh84e9d6hhsI8Bh5/fqG4dzx6YdG9dLTXtE4MVEhM=";
+  "mattn.lisp" = {
+    pname = "mattn.lisp";
+    version = "0.1.12";
+    src = fetchurl {
+      url = "https://mattn.gallery.vsassets.io/_apis/public/gallery/publisher/mattn/extension/Lisp/0.1.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "Lisp-0.1.12.zip";
+      sha256 = "sha256-x6aFrcX0YElEFEr0qA669/LPlab15npmXd5Q585pIEw=";
     };
-    date = "2022-01-06";
   };
 }

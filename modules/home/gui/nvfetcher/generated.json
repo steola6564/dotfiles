@@ -29,24 +29,19 @@
         },
         "version": "0.11.7"
     },
-    "mattn.vscode-lisp": {
+    "mattn.lisp": {
         "cargoLock": null,
-        "date": "2022-01-06",
+        "date": null,
         "extract": null,
-        "name": "mattn.vscode-lisp",
+        "name": "mattn.lisp",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "09f9077526364501763414f8dd3a6aeff9e69f0e",
-            "sha256": "sha256-bwDh84e9d6hhsI8Bh5/fqG4dzx6YdG9dLTXtE4MVEhM=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://github.com/mattn/vscode-lisp.git"
+            "name": "Lisp-0.1.12.zip",
+            "sha256": "sha256-x6aFrcX0YElEFEr0qA669/LPlab15npmXd5Q585pIEw=",
+            "type": "url",
+            "url": "https://mattn.gallery.vsassets.io/_apis/public/gallery/publisher/mattn/extension/Lisp/0.1.12/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
         },
-        "version": "09f9077526364501763414f8dd3a6aeff9e69f0e"
+        "version": "0.1.12"
     }
 }
