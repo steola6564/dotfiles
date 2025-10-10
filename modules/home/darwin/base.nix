@@ -4,6 +4,7 @@
   home.homeDirectory = "/Users/steola";
   home.packages = with pkgs; [
     neovim
+    clang
     # jq
     # htop
   ];
