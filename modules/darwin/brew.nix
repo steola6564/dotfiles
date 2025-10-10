@@ -35,6 +35,7 @@
       "google-chrome"
       "raindropio"
       "zotero"
+      "zoom"
     ];
     onActivation.upgrade = true;
   };
