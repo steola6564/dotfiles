@@ -1,0 +1,12 @@
+["evilz.vscode-reveal"]
+src.vsmarketplace   = "evilz.vscode-reveal"
+fetch.vsmarketplace = "evilz.vscode-reveal"
+
+["janisdd.vscode-edit-csv"]
+src.vsmarketplace   = "janisdd.vscode-edit-csv"
+fetch.vsmarketplace = "janisdd.vscode-edit-csv"
+
+["mattn.vscode-lisp"]
+src.git   = "https://github.com/mattn/vscode-lisp.git"
+fetch.git = "https://github.com/mattn/vscode-lisp.git"
+

@@ -1,0 +1,52 @@
+{
+    "evilz.vscode-reveal": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "evilz.vscode-reveal",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "vscode-reveal-4.3.3.zip",
+            "sha256": "sha256-KqvQi0DMfHppX96qKHIkO9zIueBdGGV+6dYkpFEzFBo=",
+            "type": "url",
+            "url": "https://evilz.gallery.vsassets.io/_apis/public/gallery/publisher/evilz/extension/vscode-reveal/4.3.3/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "4.3.3"
+    },
+    "janisdd.vscode-edit-csv": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "janisdd.vscode-edit-csv",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "vscode-edit-csv-0.11.7.zip",
+            "sha256": "sha256-8buRNSxfKmf9+MZDvFOOyrbXtbIC7GbHPRCBVnAHXrA=",
+            "type": "url",
+            "url": "https://janisdd.gallery.vsassets.io/_apis/public/gallery/publisher/janisdd/extension/vscode-edit-csv/0.11.7/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.11.7"
+    },
+    "mattn.vscode-lisp": {
+        "cargoLock": null,
+        "date": "2022-01-06",
+        "extract": null,
+        "name": "mattn.vscode-lisp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "09f9077526364501763414f8dd3a6aeff9e69f0e",
+            "sha256": "sha256-bwDh84e9d6hhsI8Bh5/fqG4dzx6YdG9dLTXtE4MVEhM=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/mattn/vscode-lisp.git"
+        },
+        "version": "09f9077526364501763414f8dd3a6aeff9e69f0e"
+    }
+}

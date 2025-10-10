@@ -10,13 +10,24 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
+    nvfetcher.url = "github:berberman/nvfetcher";
+    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, ... }:
+  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, nvfetcher, ... }:
   let
     system = "x86_64-linux";
   in {
     overlays.default = import ./overlays/cloudflared.nix;
+
+    apps.x86_64-linux.nvfetcher = {
+      type = "app";
+      program = "${inputs.nvfetcher.packages.x86_64-linux.default}/bin/nvfetcher";
+    };
+    apps.aarch64-darwin.nvfetcher = {
+      type = "app";
+      program = "${inputs.nvfetcher.packages.aarch64-darwin.default}/bin/nvfetcher";
+    };
 
     nixosConfigurations.nixos-server = nixpkgs.lib.nixosSystem {
       inherit system;
