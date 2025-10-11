@@ -52,3 +52,7 @@ fetch.vsmarketplace = "marp-team.marp-vscode"
 src.vsmarketplace = "ritwickdey.liveserver"
 fetch.vsmarketplace = "ritwickdey.liveserver"
 
+["openai.chatgpt"]
+src.vsmarketplace   = "openai.chatgpt"
+fetch.vsmarketplace = "openai.chatgpt"
+

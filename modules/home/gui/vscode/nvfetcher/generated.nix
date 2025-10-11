@@ -96,6 +96,15 @@
       sha256 = "sha256-MibP2zqTwlXXVsXQOSuoi5SO8BskJC/AihrhJFg8tac=";
     };
   };
+  "openai.chatgpt" = {
+    pname = "openai.chatgpt";
+    version = "0.5.19";
+    src = fetchurl {
+      url = "https://openai.gallery.vsassets.io/_apis/public/gallery/publisher/openai/extension/chatgpt/0.5.19/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage";
+      name = "chatgpt-0.5.19.zip";
+      sha256 = "sha256-j6dyLmEWO4Ro3FuHiX2WLuyujy1Aj1a6v4BtAlZD0QU=";
+    };
+  };
   "ritwickdey.liveserver" = {
     pname = "ritwickdey.liveserver";
     version = "5.7.9";

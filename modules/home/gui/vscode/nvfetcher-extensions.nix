@@ -111,5 +111,15 @@ with pkgs.vscode-utils; [
     };
     vsix = generated."ritwickdey.liveserver".src;
   })
+
+  (buildVscodeMarketplaceExtension {
+    mktplcRef = {
+      publisher = "openai";
+      name = "chatgpt";
+      version = generated."openai.chatgpt".version;
+    };
+    vsix = generated."openai.chatgpt".src;
+  })
+
 ]
 

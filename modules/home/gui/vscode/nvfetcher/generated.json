@@ -149,6 +149,21 @@
         },
         "version": "1.0.5959"
     },
+    "openai.chatgpt": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "openai.chatgpt",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": "chatgpt-0.5.19.zip",
+            "sha256": "sha256-j6dyLmEWO4Ro3FuHiX2WLuyujy1Aj1a6v4BtAlZD0QU=",
+            "type": "url",
+            "url": "https://openai.gallery.vsassets.io/_apis/public/gallery/publisher/openai/extension/chatgpt/0.5.19/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+        },
+        "version": "0.5.19"
+    },
     "ritwickdey.liveserver": {
         "cargoLock": null,
         "date": null,
