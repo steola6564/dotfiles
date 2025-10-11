@@ -2,10 +2,10 @@
 
 {
   programs.zsh.shellAliases = {
-    # macOS では "gcc" 実体が Clang なので、
+    # Nix の clang を明示的に呼ぶ
     # Nix 環境でも同様にエイリアスを付けておく。
-    gcc = "clang";
-    g++ = "clang++";
+    cc = "clang";
+    "c++" = "clang++";
   };
 }
 
