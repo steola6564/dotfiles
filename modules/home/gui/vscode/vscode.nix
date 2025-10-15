@@ -16,7 +16,7 @@ in
     enable = true;
 
     # Marketplace拡張を宣言的に固定
-    mutableExtensionsDir = false;
+    mutableExtensionsDir = true;
 
     # pkgs標準拡張 + nvfetcher管理拡張
     extensions = baseExtensions ++ nvExtensions;

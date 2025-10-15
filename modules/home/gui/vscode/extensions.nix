@@ -8,11 +8,11 @@ with pkgs.vscode-extensions; [
   jnoortheen.nix-ide
 
   # === Python ===
-  ms-python.debugpy
-  ms-python.python
-  ms-python.vscode-pylance
-  ms-toolsai.jupyter
-  ms-toolsai.vscode-jupyter-slideshow
+  # ms-python.debugpy
+  # ms-python.python
+  # ms-python.vscode-pylance
+  # ms-toolsai.jupyter
+  # ms-toolsai.vscode-jupyter-slideshow
 
   # === C/C++ ===
   ms-vscode.cmake-tools

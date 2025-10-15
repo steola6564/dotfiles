@@ -2,14 +2,6 @@
 
 {
   # 他の設定…
-  environment.systemPath = [
-    "/run/current-system/sw/bin"
-    "/etc/profiles/per-user/${config.users.users.steola.name}/bin"
-    "/Users/steola/.nix-profile/bin"
-    "/nix/var/nix/profiles/default/bin"
-    "/opt/homebrew/bin"
-    "/opt/homebrew/sbin"
-  ];
 
   system.defaults = {
     dock = {
