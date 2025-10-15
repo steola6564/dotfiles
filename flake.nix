@@ -12,25 +12,47 @@
     vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
     nvfetcher.url = "github:berberman/nvfetcher";
     nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, nvfetcher, ... }:
+  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, nvfetcher, flake-utils, ... }:
   let
-    system = "x86_64-linux";
-  in {
-    overlays.default = import ./overlays/cloudflared.nix;
+    inherit (nixpkgs.lib) nixosSystem;
+  in
+  (
+    flake-utils.lib.eachDefaultSystem (system:
+      let
+        pkgs = import nixpkgs {
+          inherit system;
+	        config.allowUnfree = true;
+        };
+      in
+      {
+        # Devshells
+        devShells = {
+          poetry = import ./Devshells/poetry.nix { inherit pkgs; };
+          # uv = import ./Devshells/uv.nix { inherit pkgs; };
+        };
 
-    apps.x86_64-linux.nvfetcher = {
-      type = "app";
-      program = "${inputs.nvfetcher.packages.x86_64-linux.default}/bin/nvfetcher";
-    };
-    apps.aarch64-darwin.nvfetcher = {
-      type = "app";
-      program = "${inputs.nvfetcher.packages.aarch64-darwin.default}/bin/nvfetcher";
+        # Apps
+        apps = {
+          nvfetcher = {
+            type = "app";
+            program = "${inputs.nvfetcher.packages.${system}.default}/bin/nvfetcher";
+          };
+        };
+      }
+    )
+  )
+
+  //{
+
+    overlays = {
+        default = import ./overlays/cloudflared.nix;
     };
 
     nixosConfigurations.nixos-server = nixpkgs.lib.nixosSystem {
-      inherit system;
+      system = "x86_64-linux";
       specialArgs = {
         inherit inputs;
 	hostname = "nixos-server";
@@ -53,19 +75,23 @@
         })
       ];
     };
+
+
     nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
-      inherit system;
+      system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
         ./hosts/nixos-desktop/configuration.nix
         home-manager.nixosModules.home-manager
       ];
     };
+
+
     darwinConfigurations."darwin-air" = inputs.nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = {
         inherit inputs;
-        hostname = "darwin-air"; 
+        hostname = "darwin-air";
       };
       modules = [
         ./hosts/darwin-air/configuration.nix
