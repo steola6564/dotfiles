@@ -1,5 +1,5 @@
 # modules/home/home.nix
-{ pkgs, lib ? pkgs.lib, ... }:
+{ config, pkgs, lib ? pkgs.lib, ... }:
 {
   imports = [
     ./base/git.nix
@@ -15,6 +15,16 @@
     bat
     git
     zellij
+  ];
+
+   # Volta 本体は pkgs.volta でインストール済み前提
+  home.sessionVariables = {
+    VOLTA_HOME = "${config.home.homeDirectory}/.volta";
+  };
+
+  # PATH へ shim を追加（先頭に来るように）
+  home.sessionPath = [
+    "${config.home.homeDirectory}/.volta/bin"
   ];
 
   home.stateVersion = "25.05";
