@@ -12,6 +12,9 @@ let
 
 in
 {
+  imports = [
+    ./vscode-config.nix
+  ];
   programs.vscode = {
     enable = true;
 

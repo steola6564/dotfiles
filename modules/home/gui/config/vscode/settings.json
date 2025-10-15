@@ -1,0 +1,7 @@
+{
+  "extensions.ignoreRecommendations": false,
+  "extensions.autoCheckUpdates": true,
+  "extensions.autoUpdate": true,
+  "extensions.showRecommendationsOnlyOnDemand": false
+}
+
