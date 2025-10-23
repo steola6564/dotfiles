@@ -7,7 +7,7 @@ in {
   home.file."${cfgDir}/settings.json".source =
     ./../config/vscode/settings.json;
 
-  home.file."${cfgDir}/extensions.json".source =
+  home.file."${cfgDir}/extensions/extensions.json".source =
     ./../config/vscode/extensions.json;
 }
 

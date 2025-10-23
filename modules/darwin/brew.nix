@@ -27,6 +27,7 @@
       "utm"
       "brave-browser"
       "discord"
+      "docker"
       "slack"
       "visual-studio-code"
       "alacritty"
