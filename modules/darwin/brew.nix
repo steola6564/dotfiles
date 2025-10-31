@@ -23,6 +23,8 @@
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
       "nikitabobko/tap/aerospace"
+      "chatgpt"
+      # "chatgpt-atlas"
       "deepl"
       "utm"
       "brave-browser"

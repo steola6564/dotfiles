@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    vim wget neovim git curl
+    vim wget neovim git curl gh
     home-manager
   ];
 }

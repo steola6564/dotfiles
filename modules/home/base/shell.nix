@@ -16,15 +16,7 @@ in {
       plugins = [ "git" "z" "history" ];
     };
 
-    initContent = ''
-      source ${p10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
-      source ~/.p10k.zsh
-    '';
   };
 
-  home.file.".p10k.zsh".source = ../p10k.zsh;
-
-  # Starship prompt は zsh 専用の p10k を使う限り不要。
-  # ただし将来的に p10k で制約や問題が出た際に切り替え可能とするためコメントアウトして保持。
-  # programs.starship.enable = true;
+  programs.starship.enable = true;
 }
