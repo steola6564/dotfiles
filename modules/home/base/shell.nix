@@ -1,9 +1,5 @@
 { pkgs, ... }:
-let
-  p10k = if pkgs ? powerlevel10k
-         then pkgs.powerlevel10k
-         else pkgs.zsh-powerlevel10k;
-in {
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
