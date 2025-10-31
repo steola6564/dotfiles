@@ -1,0 +1,81 @@
+# ==========================================================
+#  Starship Configuration (converted from Powerlevel10k)
+# ==========================================================
+
+format = """
+$os$directory$git_branch$git_status$fill$cmd_duration$status$direnv$python$nodejs$time
+$character
+"""
+
+# ----------------------------------------------------------
+# GENERAL SETTINGS
+# ----------------------------------------------------------
+add_newline = true
+command_timeout = 1000
+
+[os]
+disabled = false
+style = "bold white"
+format = "[$symbol]($style) "
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = false
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "purple"
+format = "[$all_status$ahead_behind]($style) "
+
+[status]
+disabled = false
+symbol = "✘"
+success_symbol = ""
+format = "[$symbol$status]($style) "
+style = "red"
+
+[cmd_duration]
+min_time = 500
+format = "⏱ [$duration]($style) "
+style = "yellow"
+
+[direnv]
+symbol = "󰫽 "
+format = "[$symbol]($style) "
+style = "green"
+
+[python]
+symbol = " "
+format = "[$symbol$virtualenv]($style) "
+style = "blue"
+
+[nodejs]
+symbol = " "
+format = "[$symbol$version]($style) "
+style = "green"
+
+[time]
+disabled = false
+time_format = "%H:%M:%S"
+format = "🕒 [$time]($style) "
+style = "cyan"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+format = "$symbol "
+
+# ----------------------------------------------------------
+# OPTIONAL SEGMENTS (for later parity)
+# ----------------------------------------------------------
+# [aws]
+# [gcloud]
+# [rust]
+# [package]
+
