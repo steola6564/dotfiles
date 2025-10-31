@@ -22,6 +22,7 @@
     ../../modules/darwin/brew.nix
     ../../modules/darwin/mas.nix
     ../../modules/darwin/display.nix
+    ../../modules/darwin/maintenance.nix
   ];
 }
 

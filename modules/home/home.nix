@@ -9,7 +9,7 @@
   home.packages = with pkgs; [
     repgrep
     fd
-    mise
+    devbox 
     pixi
     volta
     uv
