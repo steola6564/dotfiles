@@ -30,7 +30,7 @@
       {
         # Devshells
         devShells = {
-          poetry = import ./Devshells/poetry.nix { inherit pkgs; };
+          # poetry = import ./Devshells/poetry.nix { inherit pkgs; };
           # uv = import ./Devshells/uv.nix { inherit pkgs; };
         };
 

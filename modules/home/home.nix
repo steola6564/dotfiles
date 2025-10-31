@@ -9,6 +9,8 @@
   home.packages = with pkgs; [
     repgrep
     fd
+    mise
+    pixi
     volta
     uv
     tree
