@@ -27,6 +27,7 @@
       # "chatgpt-atlas"
       "deepl"
       "utm"
+      "steam"
       "brave-browser"
       "discord"
       "docker"
