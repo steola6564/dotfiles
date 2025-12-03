@@ -23,6 +23,7 @@
         "/Applications/Google Chrome.app"
         "/System/Applications/Mail.app"
         "/Applications/Visual Studio Code.app"
+	"/System/Applications/Notes.app"
         "/Applications/UpNote.app"
         "/Applications/Raindrop.io.app"
         "/Applications/Zotero.app"

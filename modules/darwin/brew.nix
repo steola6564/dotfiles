@@ -22,6 +22,7 @@
     casks = [
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
+      "scroll-reverser"
       "nikitabobko/tap/aerospace"
       "chatgpt"
       # "chatgpt-atlas"
