@@ -21,18 +21,6 @@
   in
   (
 
-    homeManagerModules = {
-      default = { config, lib, pkgs, username, homeDirectory, ... }: {
-        imports = [
-          ./modules/home/home.nix
-        ];
-
-        home.username = username;
-	home.homeDirectory = homeDirectory;
-        home.stateVersion = "25.05";
-      };
-    };
-
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
@@ -59,6 +47,20 @@
   )
 
   //{   
+
+    homeManagerModules = {
+      default =
+        { config, lib, pkgs, username, homeDirectory, ... }:
+        {
+          imports = [
+            ./modules/home/home.nix
+          ];
+
+          home.username = username;
+          home.homeDirectory = homeDirectory;
+          home.stateVersion = "25.05";
+        };
+    };
 
     overlays = {
         default = import ./overlays/cloudflared.nix;
