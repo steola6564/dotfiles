@@ -20,6 +20,17 @@
     inherit (nixpkgs.lib) nixosSystem;
   in
   (
+
+    homeManagerModules = {
+      default = { config, lib, pkgs, ... }: {
+        imports = [
+          ./modules/home/home.nix
+        ];
+
+        home.stateVersion = lib.mkDefault "25.05";
+      };
+    };
+
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs {
@@ -45,18 +56,7 @@
     )
   )
 
-  //{
-
-    homeManagerModules = {
-      # 外部（NixOS / subflake）から import される「受け皿」
-      default = { config, lib, pkgs, ... }: {
-        imports = [
-          ./modules/home/home.nix
-        ];
-
-        home.stateVersion = lib.mkDefault "25.05";
-      };
-    };
+  //{   
 
     overlays = {
         default = import ./overlays/cloudflared.nix;
