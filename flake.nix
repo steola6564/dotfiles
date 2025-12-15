@@ -104,6 +104,18 @@
 	})
       ];
     };
+
+    homeManagerModules = {
+      # 外部から import される “受け皿”
+      default = { config, lib, pkgs, ... }: {
+        imports = [
+          ./modules/home/home.nix
+        ];
+
+        home.stateVersion = lib.mkDefault "25.05";
+      };
+    };
+
   };
 }
 
