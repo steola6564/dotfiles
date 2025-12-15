@@ -22,12 +22,14 @@
   (
 
     homeManagerModules = {
-      default = { config, lib, pkgs, ... }: {
+      default = { config, lib, pkgs, username, homeDirectory, ... }: {
         imports = [
           ./modules/home/home.nix
         ];
 
-        home.stateVersion = lib.mkDefault "25.05";
+        home.username = username;
+	home.homeDirectory = homeDirectory;
+        home.stateVersion = "25.05";
       };
     };
 
