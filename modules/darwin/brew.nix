@@ -6,7 +6,11 @@
     enable = true;
 
     # 自動で不要なパッケージを削除する
-    onActivation.cleanup = "zap";
+    onActivation = { 
+      cleanup = "zap";
+      autoUpdate = true;
+      upgrade = true;
+    };
 
     taps = [
       "FelixKratz/formulae"
@@ -31,18 +35,18 @@
       "steam"
       "brave-browser"
       "discord"
-      "docker"
+      "docker-desktop"
       "slack"
       "visual-studio-code"
       "alacritty"
       "obsidian"
+      "tailscale-app"
       "google-japanese-ime"
       "google-chrome"
       "raindropio"
       "zotero"
       "zoom"
     ];
-    onActivation.upgrade = true;
   };
 }
 
