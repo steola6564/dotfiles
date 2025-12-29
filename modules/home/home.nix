@@ -13,6 +13,7 @@
     pixi
     volta
     uv
+    go
     tree
     bat
     git
