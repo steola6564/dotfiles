@@ -72,10 +72,6 @@
         };
     };
 
-    overlays = {
-        default = import ./overlays/cloudflared.nix;
-    };
-
     nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
@@ -84,7 +80,6 @@
         home-manager.nixosModules.home-manager
       ];
     };
-
 
     darwinConfigurations."darwin-air" = inputs.nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
@@ -97,13 +92,11 @@
         home-manager.darwinModules.home-manager
 	({ pkgs, ... }: {
           nixpkgs.overlays = [
-	    self.overlays.default
 	    vscode-extensions.overlays.default
 	  ];
 	})
       ];
     };
-
   };
 }
 
