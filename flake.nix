@@ -6,12 +6,22 @@
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
     nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
-    home-manager.url = "github:nix-community/home-manager/release-25.05";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-    nvfetcher.url = "github:berberman/nvfetcher";
-    nvfetcher.inputs.nixpkgs.follows = "nixpkgs";
+    
+    home-manager = {
+      url = "github:nix-community/home-manager/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    
+    nvfetcher = {
+      url = "github:berberman/nvfetcher";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     flake-utils.url = "github:numtide/flake-utils";
   };
 
