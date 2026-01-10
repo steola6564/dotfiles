@@ -8,8 +8,6 @@
         ../modules/home/home.nix
       ] ++ lib.optionals (config.networking.hostName == "nixos-desktop") [
         ../profiles/home/desktop.nix
-      ] ++ lib.optionals (config.networking.hostName == "nixos-server") [
-        ../profiles/home/server.nix
       ] ++ lib.optionals (hostname == "darwin-air") [
         ../profiles/home/air.nix
       ];
