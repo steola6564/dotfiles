@@ -27,36 +27,30 @@
 
   outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, nvfetcher, flake-utils, ... }:
   let
-    inherit (nixpkgs.lib) nixosSystem;
+    systemOutputs = 
+      flake-utils.lib.eachDefaultSystem (system:
+        let
+	  pkgs = import nixpkgs {
+	    inherit system;
+	    config.allowUnfree = true;
+	  };
+	in
+        {
+	  devshells = {
+	  };
+
+	  apps = {
+	    nvfetcher = {
+	      type = "app";
+	      program = 
+	        "${inputs.nvfetcher.packages.${system}.default}/bin/nvfetcher";
+	    };
+	  };
+	}
+      );
   in
-  (
-
-    flake-utils.lib.eachDefaultSystem (system:
-      let
-        pkgs = import nixpkgs {
-          inherit system;
-	        config.allowUnfree = true;
-        };
-      in
-      {
-        # Devshells
-        devShells = {
-          # poetry = import ./Devshells/poetry.nix { inherit pkgs; };
-          # uv = import ./Devshells/uv.nix { inherit pkgs; };
-        };
-
-        # Apps
-        apps = {
-          nvfetcher = {
-            type = "app";
-            program = "${inputs.nvfetcher.packages.${system}.default}/bin/nvfetcher";
-          };
-        };
-      }
-    )
-  )
-
-  //{   
+  {
+    inherit (systemOutputs) apps devShells;
 
     homeManagerModules = {
       default =
