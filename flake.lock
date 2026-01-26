@@ -244,6 +244,26 @@
         "type": "github"
       }
     },
+    "opencode": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1769403840,
+        "narHash": "sha256-RgrIkWHiGZX5N4d0nhY2Tm7JyNcRRGjOUKHD8d3Flfg=",
+        "owner": "anomalyco",
+        "repo": "opencode",
+        "rev": "022265829eca0032d310e0f177d729290eb6f8fa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "anomalyco",
+        "repo": "opencode",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -252,6 +272,7 @@
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_3",
         "nvfetcher": "nvfetcher",
+        "opencode": "opencode",
         "unstable": "unstable",
         "vscode-extensions": "vscode-extensions"
       }
