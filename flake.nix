@@ -74,10 +74,14 @@
 
     nixosConfigurations.nixos-wsl = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+	hostname = "nixos-wsl";
+      };
       modules = [
         nixos-wsl.nixosModules.default
         ./hosts/nixos-wsl/configuration.nix
+	home-manager.nixosModules.home-manager
       ];
     };
 

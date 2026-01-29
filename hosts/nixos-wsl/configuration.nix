@@ -4,7 +4,7 @@
   imports = [
     ../../modules/system/base.nix
     ../../modules/pkgs/common.nix
-    # ../../modules/home-manager.nix
+    ../../modules/home-manager.nix
   ];
 
   environment.systemPackages = with pkgs; [
