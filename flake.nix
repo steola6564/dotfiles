@@ -6,7 +6,8 @@
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     agenix.url = "github:ryantm/agenix";
     nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
-    
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,7 +31,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs @ { self, nixpkgs, unstable, home-manager, agenix, vscode-extensions, nvfetcher, flake-utils, ... }:
+  outputs = inputs @ { self, nixpkgs, unstable, nixos-wsl, home-manager, agenix, vscode-extensions, nvfetcher, flake-utils, ... }:
   let
     systemOutputs = 
       flake-utils.lib.eachDefaultSystem (system:
@@ -69,6 +70,15 @@
           home.homeDirectory = homeDirectory;
           home.stateVersion = "25.05";
         };
+    };
+
+    nixosConfigurations.nixos-wsl = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs; };
+      modules = [
+        nixos-wsl.nixosModules.default
+        ./hosts/nixos-wsl/configuration.nix
+      ];
     };
 
     nixosConfigurations.nixos-desktop = nixpkgs.lib.nixosSystem {
