@@ -22,6 +22,7 @@
   security.sudo.wheelNeedsPassword = false;
 
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
 
   wsl.enable = true;
   wsl.defaultUser = "steola";
