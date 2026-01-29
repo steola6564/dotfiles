@@ -1,5 +1,5 @@
 {
-  description = "NixOS/Darwin unified repo (方案A)";
+  description = "Unified Nix-based personal infrastructure across Darwin, NixOS, and WSL";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
