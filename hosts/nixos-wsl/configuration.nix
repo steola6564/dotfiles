@@ -4,24 +4,12 @@
   imports = [
     ../../modules/system/base.nix
     ../../modules/pkgs/common.nix
+    ../../modules/users/steola.nix
     ../../modules/home-manager.nix
   ];
 
-  environment.systemPackages = with pkgs; [
-    vim wget neovim git curl gh
-  ];
-
-  users.users.steola = {
-    isNormalUser = true;
-    home = "/home/steola";
-    description = "steola";
-    extraGroups = [ "wheel" ];
-    shell = pkgs.zsh;
-  };
-
   security.sudo.wheelNeedsPassword = false;
 
-  programs.zsh.enable = true;
   programs.nix-ld.enable = true;
 
   wsl.enable = true;
