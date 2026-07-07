@@ -24,6 +24,7 @@
 
     # cask (GUI apps / fonts)
     casks = [
+      "anki"
       "font-jetbrains-mono-nerd-font"
       "font-fira-code-nerd-font"
       "scroll-reverser"
