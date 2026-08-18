@@ -37,7 +37,7 @@
       "brave-browser"
       "discord"
       "docker-desktop"
-      "slack"
+      # "slack"
       "visual-studio-code"
       "alacritty"
       "obsidian"
