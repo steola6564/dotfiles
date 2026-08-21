@@ -18,6 +18,9 @@
     bat
     git
     zellij
+
+    elmPackages.elm
+    elmPackages.elm-test
   ];
 
    # Volta 本体は pkgs.volta でインストール済み前提
