@@ -1,28 +1,32 @@
 { config, pkgs, ... }:
 
-let
-  # === nvfetcher 生成物 ===
-  generated = import ./nvfetcher/generated.nix {
-    inherit (pkgs) fetchurl fetchgit fetchFromGitHub dockerTools;
-  };
+# let
+#   # === nvfetcher 生成物 ===
+#   generated = import ./nvfetcher/generated.nix {
+#     inherit (pkgs) fetchurl fetchgit fetchFromGitHub dockerTools;
+#   };
 
-  # === 拡張リスト ===
-  baseExtensions = import ./extensions.nix { inherit pkgs; };
-  nvExtensions   = import ./nvfetcher-extensions.nix { inherit pkgs generated; };
-
-in
+#   # === 拡張リスト ===
+#   baseExtensions = import ./extensions.nix { inherit pkgs; };
+#   nvExtensions   = import ./nvfetcher-extensions.nix { inherit pkgs generated; };
+#
+# in
 {
-  imports = [
-    ./vscode-config.nix
-  ];
+  # extensions.json まで Nix 管理しているため一旦停止
+  # imports = [
+  #   ./vscode-config.nix
+  # ];
   programs.vscode = {
     enable = true;
 
-    # Marketplace拡張を宣言的に固定
-    mutableExtensionsDir = true;
-
-    # pkgs標準拡張 + nvfetcher管理拡張
-    extensions = baseExtensions ++ nvExtensions;
+    # === VS Code extensions ===
+    # 一旦 VS Code 自身に管理させる
+    #
+    # # Marketplace拡張を宣言的に固定
+    # mutableExtensionsDir = true;
+    #
+    # # pkgs標準拡張 + nvfetcher管理拡張
+    # extensions = baseExtensions ++ nvExtensions;
 
     userSettings = {
       "editor.formatOnSave" = true;
