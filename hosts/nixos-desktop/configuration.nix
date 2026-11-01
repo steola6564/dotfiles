@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 { config, lib, pkgs, ... }:
 
 {
@@ -15,27 +11,27 @@
 
     # Networking
     ../../modules/networking/common.nix
-    ../../modules/networking/wol.nix
+    # ../../modules/networking/wol.nix
 
     # UI & Desktop
-    ../../modules/ui/fonts.nix
-    ../../modules/ui/desktop.nix
+    # ../../modules/ui/fonts.nix
+    # ../../modules/ui/desktop.nix
 
     # Input/Locale
-    ../../modules/i18n/input.nix
+    # ../../modules/i18n/input.nix
 
     # Hardware
-    ../../modules/hardware/nvidia.nix
+    # ../../modules/hardware/nvidia.nix
 
     # Audio
-    ../../modules/audio/pipewire.nix
+    # ../../modules/audio/pipewire.nix
 
     # Users
     ../../modules/users/steola.nix
 
     # Packages & Services
     ../../modules/pkgs/common.nix
-    ../../modules/pkgs/gui.nix
+    # ../../modules/pkgs/gui.nix
     ../../modules/services/common.nix
     
     # Home Manager integration
