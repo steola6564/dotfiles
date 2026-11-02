@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    tailscale.url = "github:tailscale/tailscale";
     agenix.url = "github:ryantm/agenix";
     nix-darwin.url = "github:lnl7/nix-darwin/nix-darwin-25.05";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
@@ -26,7 +27,7 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = inputs @ { self, nixpkgs, unstable, nixos-wsl, home-manager, agenix, vscode-extensions, nvfetcher, flake-utils, ... }:
+  outputs = inputs @ { self, nixpkgs, unstable, nixos-wsl, home-manager, tailscale, agenix, vscode-extensions, nvfetcher, flake-utils, ... }:
   let
     systemOutputs = 
       flake-utils.lib.eachDefaultSystem (system:
