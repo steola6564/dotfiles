@@ -4,10 +4,6 @@
   services.tailscale = {
     enable = true;
 
-    package = (
-      builtins.getAttr
-        pkgs.stdenv.hostPlatform.system
-        inputs.tailscale.packages
-    ).default;
+    package = inputs.tailscale.packages.x86_64-linux.default;
   };
 }
