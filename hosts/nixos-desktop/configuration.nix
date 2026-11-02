@@ -11,6 +11,7 @@
 
     # Networking
     ../../modules/networking/common.nix
+    ../../modules/networking/tailscale.nix
     # ../../modules/networking/wol.nix
 
     # UI & Desktop
